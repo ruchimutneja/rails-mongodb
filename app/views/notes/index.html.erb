@@ -1,20 +1,22 @@
-<table>
-  <thead>
+<table class="table table-hover table-bordered">
+  <thead class="thead-light">
     <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
+      <th scope="col">Title</th>
+      <th scope="col">Body</th>
+      <th scope="col">Tags</th>
+      <th  scope="col" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @notes.each do |note| %>
       <tr>
-        <td><%= note.title %></td>
-        <td><%= note.body %></td>
-        <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
-        <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td scope="row"><%= note.title %></td>
+        <td scope="row"><%= note.body %></td>
+        <td scope="row"><%= note.tags %></td>
+        <td scope="row"><%= link_to 'Show', note %></td>
+        <td scope="row"><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td scope="row"><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
